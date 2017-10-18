@@ -75,25 +75,3 @@ order_func x (y:ys)
    |otherwise = x:y:ys
    
    
-   
-   
-   
-{-   
-removeDups :: (Ord a) => [a] -> [a]
-removeDups list = removeDupsHelp (sort list)
-
-
-
---for each ordered pair, we traverse through each element in each list (page) of the book
-index_func :: [[String]] -> (String, [Int]) -> (String, [Int])
-index_func book pair  = update ( map ( filter (\x -> x == fst(pair)) ) book ) pair 0   
-
-
---update the pair, given an lists of lists, where the size of each list tells us the number of times
---the pair word occurs in that list
-update :: [[String]] -> (String, [Int]) -> Int -> (String, [Int])
-update [] pair n = pair
-update (x : xs) pair n
-    | length(x) > 0 = ( fst(pair), (snd(pair) ++ [n] ++ snd(update xs pair (n + 1))  ))
-    | otherwise = ( fst(pair, snd(pair) ++ snd(update xs pair (n + 1))))
---}
